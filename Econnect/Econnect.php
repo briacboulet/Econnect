@@ -22,10 +22,30 @@ session_start();
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
 				echo $_SESSION['Prenom'],  $_SESSION['Nom'];
 			?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	
-			<img src="photo de profil.jpg"  name="pdp" id="pdp"/> 
+			<?php
 			
-			<img src="parametre.jpg" name="parametre" id="parametre"/>
+				try
+				{
+					$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
+				}
+				catch (Exception $e)
+				{
+						die('Erreur : ' . $e->getMessage());
+				}
+				$id= $_SESSION['id'];
+				$photo='/photo';
+				$req = $bdd->prepare('SELECT * FROM utilisateur WHERE id= :id');
+
+				$req->execute(array(
+					'photo_profil' => $photo,
+					));
+
+				$resultat = $req->fetch();
+				echo '<img src=' . $photo . '">';
+			
+			?>
+		
+			<a href=Reglages.php><img  src="parametre.jpg" name="parametre" id="parametre"/></a>
 	
 	</header>
 	
@@ -34,11 +54,11 @@ session_start();
 			
 		<nav>
 		<div id=col1 style="color: white;">
-			<a href=Econnect.html>Fil d'actualité</a><br><br><br>
-			<a href=Ami.Econnect.html>Ami</a><br><br><br>
-			<a href=Chronologie.Econnect.html>Chronologie</a><br><br><br>
-			<a href=Apropos.Econnect.html>A propos</a><br><br><br>
-			<a href=Photos.Econnect.html>Photos et Vidéos</a><br><br><br>
+			<a href=Econnect.php>Fil d'actualité</a><br><br><br>
+			<a href=Ami.Econnect.php>Ami</a><br><br><br>
+			<a href=Chronologie.Econnect.php>Chronologie</a><br><br><br>
+			<a href=Apropos.Econnect.php>A propos</a><br><br><br>
+			<a href=Photos.Econnect.php>Photos et Vidéos</a><br><br><br>
 		</div>
 		</nav>
 		

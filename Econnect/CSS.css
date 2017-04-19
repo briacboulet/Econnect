@@ -55,7 +55,7 @@ margin-left: 820px;
 
 #parametre {
 width:80px; height:80px;
-margin-left: 350px;
+margin-left: 309.5px;
 }
 
 body{
@@ -89,6 +89,7 @@ position:relative
 float:center;  
 }
 
+
 #milieu{
 margin:auto;
 display:block;
@@ -99,5 +100,10 @@ nav{
 margin-top : 15px;
 }
 
+#reglages {
+width:100px; height:100px;
+position: absolute;
+margin-left: 80px;
+}
 
 
