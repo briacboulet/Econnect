@@ -16,32 +16,19 @@ session_start();
 	
 			<img src="Logo.jpg" name="logo" id="logo"/> 
 			
-            <input type="search" placeholder="Cherchez une personne ou un évènement..." name="rechercher" id="rechercher"> 
-	
+			
+            <form action = "Rechercher_amis.php" method ="post" id="rechercher">
+			 <input type="text" placeholder="Cherchez une personne ou un évènement..." name="Nom" id="rechercher" >
+			 <input type="submit" value="Rechercher" >
+			</form>
+			
 			<?php 
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
 				echo $_SESSION['Prenom'],  $_SESSION['Nom'];
 			?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 			<?php
-			
-				try
-				{
-					$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
-				}
-				catch (Exception $e)
-				{
-						die('Erreur : ' . $e->getMessage());
-				}
-				$id= $_SESSION['id'];
-				$photo='/photo';
-				$req = $bdd->prepare('SELECT * FROM utilisateur WHERE id= :id');
-
-				$req->execute(array(
-					'photo_profil' => $photo,
-					));
-
-				$resultat = $req->fetch();
-				echo '<img src=' . $photo . '">';
+		
+				echo "<img src='" . $_SESSION['photo_profil'] . "' id='pdp'>";
 			
 			?>
 		
@@ -52,15 +39,15 @@ session_start();
 	
 	<body>
 			
-		<nav>
-		<div id=col1 style="color: white;">
-			<a href=Econnect.php>Fil d'actualité</a><br><br><br>
-			<a href=Ami.Econnect.php>Ami</a><br><br><br>
-			<a href=Chronologie.Econnect.php>Chronologie</a><br><br><br>
-			<a href=Apropos.Econnect.php>A propos</a><br><br><br>
-			<a href=Photos.Econnect.php>Photos et Vidéos</a><br><br><br>
+		
+		<div id=col1>
+			<a href=Econnect.php style = "color: white;">Fil d'actualité</a><br><br><br>
+			<a href=Ami.Econnect.php style = "color: white;">Amis</a><br><br><br>
+			<a href=Chronologie.Econnect.php style = "color: white;">Chronologie</a><br><br><br>
+			<a href=Apropos.Econnect.php style = "color: white;">A propos</a><br><br><br>
+			<a href=Photos.Econnect.php style = "color: white;">Photos et Vidéos</a><br><br><br>
 		</div>
-		</nav>
+		
 		
 		<div id=col2>
 		

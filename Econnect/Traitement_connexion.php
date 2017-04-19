@@ -37,7 +37,7 @@ else
 	$_SESSION['Date_de_naissance'] = $resultat['Date_de_naissance'];
 	$_SESSION['Nom'] = $resultat['Nom'];
 	$_SESSION['Sexe'] = $resultat['Sexe'];
-	$_SESSION['Photo_profil'] = $resultat['Photo_profil'];
+	$_SESSION['photo_profil'] = $resultat['photo_profil'];
     echo 'Vous êtes connecté !';
 	header ('location: Econnect.php');
 	

@@ -13,6 +13,7 @@ session_start();
 	
 	
 	<header>
+	
 			<img src="Logo.jpg" name="logo" id="logo"/> 
 			
             <input type="search" placeholder="Cherchez une personne ou un évènement..." name="rechercher" id="rechercher"> 
@@ -21,20 +22,18 @@ session_start();
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
 				echo $_SESSION['Prenom'],  $_SESSION['Nom'];
 			?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-	
 			<?php
 		
 				echo "<img src='" . $_SESSION['photo_profil'] . "' id='pdp'>";
 			
 			?>
-			
-			<a href=Reglages.php><img  src="parametre.jpg" name="parametre" id="parametre"/></a>
-
 		
+			<a href=Reglages.php><img  src="parametre.jpg" name="parametre" id="parametre"/></a>
+	
 	</header>
 	
-	
 	<body>
+		
 		
 		<div id=col1>
 			<a href=Econnect.php style = "color: white;">Fil d'actualité</a><br><br><br>
@@ -45,32 +44,31 @@ session_start();
 		</div>
 		
 		
-		
 		<div id=col2>
 		
-			
-			
-			<?php
-				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
-				echo "<p id=center> Prenom: &nbsp;&nbsp;" . $_SESSION['Prenom'] . " &nbsp;&nbsp;</p>";
-				echo "<p id=center> Nom: &nbsp;&nbsp;" . $_SESSION['Nom'] . " &nbsp;&nbsp;</p>";
-				echo "<p id=center> Mail: &nbsp;&nbsp;" . $_SESSION['Mail'] . " &nbsp;&nbsp;</p>";
-				echo "<p id=center> Sexe: &nbsp;&nbsp;" . $_SESSION['Sexe'] . " &nbsp;&nbsp;</p>";
-				echo "<p id=center> Date_de_naissance: &nbsp;&nbsp;" . $_SESSION['Date_de_naissance'] . " &nbsp;&nbsp;</p>";
-			
-			?>
-			
-					
-			<form method='post' id=center action='upload.photo_profil.php' enctype='multipart/form-data'>
+			<p id=center>
 				
-				Changer de photo de profil <?php echo "<img src='" . $_SESSION['photo_profil'] . "' style='width:75px; height:75px; float:right'>"; ?>
-				</br></br>
-				<input type='file' name='avatar'>
-				<input type='hidden' name='MAX_FILE_SIZE' value='250000'>
-				<input type='submit' value='Envoyer'>
-				</br>
-			</form>
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text>Ami 1 <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+				
 			
+			</p>
+			
+			<p id=center> 
+				
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text>Ami 2 <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+				
+		
+			</p>
+			
+			<p id=center>
+				
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text>Ami 3 <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+			
+		
+			</p>
 		</div>
 		
 	</body>
