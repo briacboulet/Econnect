@@ -1,7 +1,8 @@
 #col2 {
-background: white;
+background: #CCCCCC;
 height :1000px;
 margin-left:50px;
+margin-top: 30px;
 float:center;
 }
 
@@ -13,15 +14,15 @@ background-color:#11B637;
 border: 1px solid green;
 margin-right: auto;
 padding-left: 3px;
-padding-top: 10px;
+margin-top: 30px;
 }
 
 #ut2{
-width : 350px;
-float:right;
-border: 1px solid green;
+width : 448px;
+border: 1px solid black;
 background:white;
-margin-right: 800px;
+margin-left: 1058px;
+text-align: center;
 }
 
 
@@ -36,15 +37,29 @@ margin-right: auto;
 height: 80px;
 }
 
-#rechercher{
-width:500px; height:25px;
-padding-top: 20px;
+#logo {
+width:80px; height:80px;
+}
 
- 
+#rechercher{
+width:500px; height:30px;
+position: absolute;
+margin-left: 135px;
+margin-top: 25px; 
+}
+
+#pdp {
+width:80px; height:80px;
+margin-left: 820px;
+}
+
+#parametre {
+width:80px; height:80px;
+margin-left: 309.5px;
 }
 
 body{
-background-color: white;
+background-color: #CCCCCC;
 }
 
 #center{
@@ -52,20 +67,32 @@ width : 350px;
 float:center;
 border: 1px solid green;
 background: white;
-margin-top: 20px;
+margin-top: 25px;
 margin-bottom: 10px;
 margin-right: 150px;
 margin-left: 170px;
 }
 
-#text {
- position:relative
- float:center;  
+#photo {
+width: 30px; height: 30px;	
+margin-left: 15px;
+margin-bottom: 15px;
 }
+
+#video {
+width: 30px; height: 30px;	
+margin-bottom: 15px;
+}
+
+#text {
+position:relative
+float:center;  
+}
+
 
 #milieu{
 margin:auto;
-    display:block;
+display:block;
 }
 
 
@@ -73,5 +100,10 @@ nav{
 margin-top : 15px;
 }
 
+#reglages {
+width:100px; height:100px;
+position: absolute;
+margin-left: 80px;
+}
 
 
