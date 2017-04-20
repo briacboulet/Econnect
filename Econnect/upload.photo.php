@@ -1,5 +1,9 @@
 <?php
 
+session_start();
+$text = $_POST['Text'];
+$Acces = $_POST['Accessibilité'];
+
 try
 {
 	$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
@@ -9,8 +13,8 @@ catch (Exception $e)
         die('Erreur : ' . $e->getMessage());
 }
 
-session_start();
-		$dossier = 'Photo/';
+
+		$dossier = 'Photo_post/';
 		$fichier = basename($_FILES['avatar']['name']);
 		$taille_maxi = 100000;
 		$taille = filesize($_FILES['avatar']['tmp_name']);
@@ -36,17 +40,32 @@ session_start();
 				echo 'Upload effectué avec succès !';
 				$chemin = $dossier . $fichier;
 				$id= $_SESSION['id'] ;
+				$date = date("Y-m-d");
+				$zero=0;
 				
-				$req = $bdd->prepare("UPDATE utilisateur SET photo_profil ='".$chemin."' WHERE id = ".$id);
+				$video = 'pas de video';
+					
+				
+					$mysqli = mysqli_connect('localhost', 'root', '','bdd_econnect'); 
 
-				$req->execute(array(
-					'photo_profil' => $chemin
-					));
+					// on sélectionne la base 
+
+					// on crée la requête SQL 
+					$sql = "INSERT INTO activites(id, Texte, Photo, Video, Date, Likes, Hates, Loves, Laughs, Accessibilite, Type) VALUES (".$id.",'".$text."','".$chemin."','".$video."','".$date."',".$zero.",".$zero.",".$zero.",".$zero.",".$Acces.",".$zero.")"; 
+
+					// on envoie la requête 
+					$req = mysqli_query($mysqli, $sql) or die('Erreur SQL !<br>'.$sql.'<br>'.mysqli_error());
 				
-				$resultat = $req->fetch();
-				$_SESSION['photo_profil'] = $chemin;
 				
-				header ('location: Apropos.Econnect.php');
+				echo $id.'<br>'; 
+				echo $text.'<br>';
+				echo $chemin.'<br>';
+				echo $date.'<br>';
+				echo $zero.'<br>';
+				echo $Acces.'<br>';
+				
+				header ('location: Photos.Econnect.php');
+				
 			}
 			else //sinon, cas où la fonction renvoie FALSE
 			{
@@ -58,6 +77,6 @@ session_start();
 			echo $erreur;
 		}
 
-		
+	
 	
 ?>

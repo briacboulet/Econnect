@@ -16,22 +16,26 @@ session_start();
 	
 			<img src="Logo.jpg" name="logo" id="logo"/> 
 			
-			
-            <form action = "Rechercher_amis.php" method ="post" id="rechercher">
-			 <input type="text" placeholder="Cherchez une personne ou un évènement..." name="Nom" id="rechercher" >
-			 <input type="submit" value="Rechercher" >
+			<a id="rechercher">
+			<form action = "Rechercher_amis.php" method ="post"  >
+			 <input type="text" placeholder="Cherchez une personne ou un évènement..." name="Nom" id="rechercher" style='float:top; margin-top:1px; margin-left:1px; '>
+			 <input type="submit" value="Rechercher" style='position:absolute; float:right; margin-top:9px; margin-left:520px;' >
 			</form>
+			</a>
+			
 			
 			<?php 
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
 				echo $_SESSION['Prenom'],  $_SESSION['Nom'];
-			?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			?> 
+			
+			
 			<?php
-		
+				
 				echo "<img src='" . $_SESSION['photo_profil'] . "' id='pdp'>";
 			
 			?>
-		
+			
 			<a href=Reglages.php><img  src="parametre.jpg" name="parametre" id="parametre"/></a>
 	
 	</header>

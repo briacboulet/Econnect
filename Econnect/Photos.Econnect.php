@@ -17,7 +17,12 @@ session_start();
 	
 			<img src="Logo.jpg" name="logo" id="logo"/> 
 			
-            <input type="search" placeholder="Cherchez une personne ou un évènement..." name="rechercher" id="rechercher"> 
+            <a id="rechercher">
+			<form action = "Rechercher_amis.php" method ="post"  >
+			 <input type="text" placeholder="Cherchez une personne ou un évènement..." name="Nom" id="rechercher" style='float:top; margin-top:1px; margin-left:1px; '>
+			 <input type="submit" value="Rechercher" style='position:absolute; float:right; margin-top:9px; margin-left:520px;' >
+			</form>
+			</a>
 	
 			<?php 
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
@@ -45,8 +50,21 @@ session_start();
 		</div>
 		
 		<div id=col2>
-		
-		
+			
+			
+			<form method='post' id=center action='upload.photo.php' enctype='multipart/form-data'>
+				
+				 <?php echo $_SESSION['Prenom'].$_SESSION['Nom']."<img src='" . $_SESSION['photo_profil'] . "' style='width:75px; height:75px; float:right'>"; ?>
+				</br></br>
+				Poster une photo
+				<input type="text" placeholder="Text photo" name="Text" >
+				 Acces:<SELECT name="Accessibilité" size="1"><OPTION>1<OPTION>2<OPTION>3</SELECT>
+				<input type='file' name='avatar'>
+				<input type='hidden' name='MAX_FILE_SIZE' value='250000'>
+				<input type='submit' value='Envoyer'>
+				</br>
+			</form>
+			
 			<p id=center>
 				
 				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
