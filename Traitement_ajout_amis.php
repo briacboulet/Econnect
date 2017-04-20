@@ -14,13 +14,11 @@ catch (Exception $e)
         die('Erreur : ' . $e->getMessage());
 }
 
-
-$req = $bdd->prepare('SELECT id FROM utilisateur'); 
+$statut = 1
+$req = $bdd->prepare('UPDATE statut FROM amis WHERE amis.id_from = utilisateur.id'); 
 $req->execute(array(
-    'id' => $_SESSION['id'],
+    'statut' => $statut
 	));
-SELECT id_from FROM amis WHERE  IF(a.id_to = :id, id_from, id_to) = a.id
-WHERE :id IN (id_to, id_from)
-
+	$resultat = $req->fetch();
 
 ?>

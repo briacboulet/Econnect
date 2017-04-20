@@ -46,8 +46,7 @@ session_start();
 				$resultat = $req->fetch();
 				$_SESSION['Photo_profil'] = $resultat['Photo_profil'];
 				
-				echo $id;
-				echo $chemin;
+				header ('location: Apropos.Econnect.php');
 			}
 			else //sinon, cas où la fonction renvoie FALSE
 			{

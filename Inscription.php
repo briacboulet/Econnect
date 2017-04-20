@@ -6,8 +6,8 @@
 <meta charset="utf-8"/>
 <link href="CSS.css" rel="stylesheet" type="text/css" />
 <link rel="icon" type="image/png" href="icon.png" />
-<img src="Logo.jpg"  width="50" height="50" />
-<div style="text-align:center;"><FONT size = "40pt" face="Verdana" style = "color : white; "> Econnect</FONT> </div>
+<img src="C:\Users\Aalix\Desktop\ING3\Web dynamique\ECONNECT\Econnect\unnamed.jpg"  width="50" height="50" />
+<div style="text-align:center;"><FONT size = "30pt" face="Verdana" style = "color : white; "> Econnect</FONT> </div>
 </head>
 
 <body style = "background-color:#11B637;">

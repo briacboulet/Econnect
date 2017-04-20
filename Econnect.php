@@ -17,32 +17,25 @@ session_start();
 			<img src="Logo.jpg" name="logo" id="logo"/> 
 			
 			<a id="rechercher">
-            <form action = "Rechercher_amis.php" method ="post"  style="position:absolute;">
-			 <input type="text" placeholder="Cherchez une personne par son nom..." name="Nom" style="float:top; margin-top:8px; margin-left:1px;" id="rechercher">
-			 <input type="submit" value="Rechercher" id="submit">
+			<form action = "Rechercher_amis.php" method ="post"  >
+			 <input type="text" placeholder="Cherchez une personne ou un évènement..." name="Nom" id="rechercher" style='float:top; margin-top:1px; margin-left:1px; '>
+			 <input type="submit" value="Rechercher" style='position:absolute; float:right; margin-top:9px; margin-left:520px;' >
 			</form>
-			<a/>
+			</a>
 			
-			<a id="rechercher2">
-			<form action = "Rechercher_evenements.php" method ="post"  style="position:absolute;">
-			 <input type="text" placeholder="Cherchez un évènement..." name="Evenement" style="float:top; margin-top:15px; margin-left:1px;" id="rechercher2">
-			 <input type="submit" value="Rechercher" id="submit2">
-			</form>
-			<a/>
 			
-			<a style="margin-left: 62.5%; position: absolute; color: white; font-size: 35px; margin-top: 1.1%;">
 			<?php 
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
 				echo $_SESSION['Prenom'],  $_SESSION['Nom'];
-			?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<a/>
+			?> 
+			
 			
 			<?php
-		
+				
 				echo "<img src='" . $_SESSION['photo_profil'] . "' id='pdp'>";
 			
 			?>
-		
+			
 			<a href=Reglages.php><img  src="parametre.jpg" name="parametre" id="parametre"/></a>
 	
 	</header>

@@ -27,10 +27,9 @@ $req->execute(array(
 	'Date_de_naissance' => $Date_de_naissance,
 	'Ville' => $Ville,
 	'Pays' => $Pays,
-	'Sexe' => $Sexe,
+	'Sexe' => $Sexe
 	));
 
 
 echo 'Le profil a bien été créé !';
-header ('location: Connexion.php');
 ?>

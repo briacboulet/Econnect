@@ -57,10 +57,8 @@ session_start();
 				//echo $Nom; 
 				
 				?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-				<nav style="text-align:center;">
-					<form method="post" action="Traitement_ajout_amis2.php" enctype="multipart/form-data">
-					<input type="submit" value="Ajouter">
-					</form><br><br>
+				    <nav style="text-align:center;">
+					<br><br>
 					<a href=Ami.deUt2.Econnect.html style = "color: white;">Amis</a><br><br><br>
 					<a href=Chronologie.deUt2.Econnect.html style = "color: white;">Chronologie</a><br><br><br>
 					<a href=Apropos.deUt2.Econnect.html style = "color: white;">A propos</a><br><br><br>

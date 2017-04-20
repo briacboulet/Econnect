@@ -27,7 +27,39 @@ session_start();
 			<form action = "demande_amis.Traitement.php" method ="post"  >
 			 <input type="submit" value="Ajouter" style='position:absolute; float:right; margin-top:9px; margin-left:520px;' >
 			</form>
+			<?php
+				$id = 0;
+				$Nom = 0;
+				$Prenom = 0;
 			
+				try
+				{
+				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
+				}
+				catch (Exception $e)
+				{
+						die('Erreur : ' . $e->getMessage());
+				}
+				
+				$nbLignes = $bdd->query("SELECT count(*) from amis WHERE id_from = _SESSION['id']");
+			
+				//$infos = $bdd->query('SELECT id, Nom, Prenom, photo_profil FROM utilisateur u1 LEFT JOIN a1 ON u1.id = a1.id_from');
+				//$infos = $bdd ("SELECT * FROM utilisateur WHERE id=('SELECT id_from FROM amis WHERE id_to=$_SESSION['id'] AND prenom='marcel");
+				$req = $bdd->prepare("SELECT Nom, Prenom 
+				FROM utilisateur AS u, amis AS a 
+				WHERE a.id_from = u.id");
+				$req->execute(array(
+				'a.id_from' => $id
+				));
+				
+				//$resultat = $nbLignes->fetch();
+				$resultat2 = $req->fetch();
+				echo	$id;
+					/*for ($i = 1; $i <= $nbLignes; $i++) {
+						echo <p 
+					*/
+			//}
+			?>
 			<?php 
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
 				echo $_SESSION['Prenom'],  $_SESSION['Nom'];
@@ -36,7 +68,7 @@ session_start();
 			
 			<?php
 				
-				echo "<img src='" . $_SESSION['photo_profil'] . "' id='pdp'>";
+				//echo "<img src='" . $_SESSION['photo_profil'] . "' id='pdp'>";
 			
 			?>
 			
