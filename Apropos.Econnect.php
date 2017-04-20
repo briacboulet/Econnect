@@ -2,7 +2,6 @@
 <html>
 <?php
 session_start();
-
 ?>
 	
    	<head>
@@ -61,39 +60,32 @@ session_start();
 		</div>
 		
 		
-		<div id=ut2 style="background-color:#11B637;">
+		
+		<div id=col2>
+		
 			
-				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<?php
-				
+			
+			<?php
 				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
-				//include 'Rechercher_amis.php';
-				//$Nom = $_GET['$amis[Nom]'];
-				echo $_SESSION['Prenom2'], $_SESSION['Nom2'];
-				//echo $Nom; 
+				echo "<p id=center> Prenom: &nbsp;&nbsp;" . $_SESSION['Prenom'] . " &nbsp;&nbsp;</p>";
+				echo "<p id=center> Nom: &nbsp;&nbsp;" . $_SESSION['Nom'] . " &nbsp;&nbsp;</p>";
+				echo "<p id=center> Mail: &nbsp;&nbsp;" . $_SESSION['Mail'] . " &nbsp;&nbsp;</p>";
+				echo "<p id=center> Sexe: &nbsp;&nbsp;" . $_SESSION['Sexe'] . " &nbsp;&nbsp;</p>";
+				echo "<p id=center> Date_de_naissance: &nbsp;&nbsp;" . $_SESSION['Date_de_naissance'] . " &nbsp;&nbsp;</p>";
+			
+			?>
+			
+					
+			<form method='post' id=center action='upload.photo_profil.php' enctype='multipart/form-data'>
 				
-				?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-				<nav style="text-align:center;">
-					<form method="post" action="Traitement_ajout_amis.php" enctype="multipart/form-data">
-					<input type="submit" value="Ajouter">
-					</form><br><br>
-					<a href=Ami.deUt2.Econnect.php style = "color: white;">Amis</a><br><br><br>
-					<a href=Chronologie.deUt2.Econnect.php style = "color: white;">Chronologie</a><br><br><br>
-					<a href=Apropos.deUt2.Econnect.php style = "color: white;">A propos</a><br><br><br>
-					<a href=Photos.deUt2.Econnect.php style = "color: white;">Photos et Vidéos</a><br><br><br>
-				</nav>
-				
-		</div>
-		
-		
-		
-		<div id=col2 style = "margin-left: 100px;">
-		
-			<p id=center>
-				
-			Informations:
-		
-			</p>
+				Changer de photo de profil <?php echo "<img src='" . $_SESSION['photo_profil'] . "' style='width:75px; height:75px; float:right'>"; ?>
+				</br></br>
+				<input type='file' name='avatar'>
+				<input type='hidden' name='MAX_FILE_SIZE' value='250000'>
+				<input type='submit' value='Envoyer'>
+				</br>
+			</form>
+			
 		</div>
 		
 	</body>

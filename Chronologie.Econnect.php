@@ -1,8 +1,8 @@
 <!DOCTYPE html>
+
 <html>
 <?php
 session_start();
-
 ?>
 	
    	<head>
@@ -49,7 +49,6 @@ session_start();
 	</header>
 	
 	
-	
 	<body>
 		
 		<div id=col1>
@@ -61,38 +60,41 @@ session_start();
 		</div>
 		
 		
-		<div id=ut2 style="background-color:#11B637;">
-			
-				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-				<?php
-				
-				$bdd = new PDO('mysql:host=localhost;dbname=bdd_econnect;charset=utf8', 'root', '');
-				//include 'Rechercher_amis.php';
-				//$Nom = $_GET['$amis[Nom]'];
-				echo $_SESSION['Prenom2'], $_SESSION['Nom2'];
-				//echo $Nom; 
-				
-				?> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
-				<nav style="text-align:center;">
-					<form method="post" action="Traitement_ajout_amis.php" enctype="multipart/form-data">
-					<input type="submit" value="Ajouter">
-					</form><br><br>
-					<a href=Ami.deUt2.Econnect.php style = "color: white;">Amis</a><br><br><br>
-					<a href=Chronologie.deUt2.Econnect.php style = "color: white;">Chronologie</a><br><br><br>
-					<a href=Apropos.deUt2.Econnect.php style = "color: white;">A propos</a><br><br><br>
-					<a href=Photos.deUt2.Econnect.php style = "color: white;">Photos et Vidéos</a><br><br><br>
-				</nav>
-				
-		</div>
 		
+		<div id=col2>
 		
-		
-		<div id=col2 style = "margin-left: 100px;">
 		
 			<p id=center>
 				
-			Informations:
-		
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text> Nom de l'utilisateur <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<br>
+				
+				<input type="text" placeholder="Nouvelle Evenement" name="New">  <input type="Date"  name="New">
+			</p>
+			
+			<p id=center>
+				
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text> Nom de l'utilisateur <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+				
+				Mon anniversaire   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   le 01/10/2017
+			</p>
+			
+			<p id=center> 
+				
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text>Nom de l'utilisateur <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+				
+				Diner avec la famille  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   le 01/05/2017
+			</p>
+			
+			<p id=center>
+				
+				<img src="photo de profil.jpg"  width="50" height="50"/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+				<a id=text>Nom de l'utilisateur <a/> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+			
+				grosse soirée samedi chez moi  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   le 22/04/2017
 			</p>
 		</div>
 		
